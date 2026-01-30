@@ -23,6 +23,14 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
+      .mobile-detail-active {
+        padding-top: 160px;
+      }
+      @media (min-width: 768px) {
+        .mobile-detail-active {
+          padding-top: 2rem;
+        }
+      }
     </style>
   </head>
   <body
@@ -193,7 +201,7 @@
           placeholder.classList.remove("hidden");
           desktopDetail.classList.add("hidden");
           mobileDetail.classList.add("hidden");
-          document.body.classList.remove("pt-[160px]", "md:pt-8");
+          document.body.classList.remove("mobile-detail-active");
           return;
         }
 
@@ -240,7 +248,7 @@
         `;
 
         // Add top padding to body so content isn't hidden behind fixed bar
-        document.body.classList.add("pt-[160px]", "md:pt-8");
+        document.body.classList.add("mobile-detail-active");
       }
 
       init();
