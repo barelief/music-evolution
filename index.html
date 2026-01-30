@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey Through Classical Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-title {
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-gray-200 font-serif p-4 md:p-8"
+  >
+    <div class="max-w-7xl mx-auto">
+      <header class="text-center mb-8 md:mb-12">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2 gradient-title">
+          Journey Through Classical Music
+        </h1>
+        <p class="text-lg text-gray-400">
+          From Medieval Chant to Contemporary Experimentation
+        </p>
+      </header>
+
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Detail panel: first in DOM for mobile (top), reordered to right on desktop -->
+        <div class="w-full md:w-[420px] md:order-2 shrink-0">
+          <div
+            id="placeholder"
+            class="sticky top-2 z-10 bg-slate-700/50 rounded-xl p-4 md:p-8 text-center border-2 border-dashed border-white/20"
+          >
+            <div class="text-4xl md:text-5xl mb-3">🎵</div>
+            <h3 class="text-lg md:text-xl font-bold mb-2 text-gray-200">
+              Select a Composer
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+              Click on any era to expand it, then choose a composer to explore
+              their life, works, and historical significance.
+            </p>
+          </div>
+          <div id="composerDetail" class="hidden"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="flex-1 md:order-1" id="timeline"></div>
+      </div>
+
+      <footer
+        class="mt-12 md:mt-16 pt-6 text-center border-t-2 border-white/10 text-gray-400"
+      >
+        <p class="mb-1">
+          This journey highlights key figures who shaped Western classical music
+          over 1,500 years.
+        </p>
+        <p class="text-sm">
+          Each composer responded to their predecessors — continuing traditions,
+          rebelling against them, or forging entirely new paths forward.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      let musicData = [];
+      let currentEra = null;
+      let selectedComposer = null;
+      async function init() {
+        try {
+          const res = await fetch("data/music.json");
+          musicData = await res.json();
+        } catch {
+          document.getElementById("timeline").innerHTML =
+            '<p class="text-red-400">Failed to load music data.</p>';
+          return;
+        }
+        renderTimeline();
+        renderDetail();
+      }
+
+      function renderTimeline() {
+        const timeline = document.getElementById("timeline");
+        timeline.innerHTML = "";
+
+        musicData.forEach((period) => {
+          const isActive = currentEra === period.era;
+
+          const card = document.createElement("div");
+          card.className = "mb-3";
+
+          const btn = document.createElement("button");
+          btn.className = `w-full p-4 md:p-5 rounded-xl flex justify-between items-center transition-all duration-300 text-left font-serif text-white cursor-pointer border-2 ${
+            isActive
+              ? "bg-gradient-to-br from-slate-700 to-slate-900 border-yellow-400"
+              : "bg-slate-700/60 border-transparent hover:translate-x-1"
+          }`;
+          btn.innerHTML = `
+            <div>
+              <div class="text-lg md:text-xl font-bold">${period.era}</div>
+              <div class="text-sm text-gray-400">${period.years}</div>
+            </div>
+            <span class="text-xs">${isActive ? "▲" : "▼"}</span>
+          `;
+          btn.onclick = () => toggleEra(period.era);
+
+          card.appendChild(btn);
+
+          if (isActive) {
+            const content = document.createElement("div");
+            content.className =
+              "p-4 bg-slate-900/80 rounded-b-xl -mt-3 pt-6";
+            content.innerHTML = `
+              <div class="mb-4 p-3 bg-yellow-400/10 border-l-4 border-yellow-400 rounded-r text-sm md:text-base">
+                <strong>Evolution:</strong> ${period.transition}
+              </div>
+              <div id="composers-${period.era}" class="grid gap-3"></div>
+            `;
+            card.appendChild(content);
+          }
+
+          timeline.appendChild(card);
+
+          if (isActive) renderComposers(period);
+        });
+      }
+
+      function renderComposers(period) {
+        const grid = document.getElementById(`composers-${period.era}`);
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        period.composers.forEach((composer) => {
+          const isSelected = selectedComposer?.name === composer.name;
+          const btn = document.createElement("button");
+          btn.className = `p-3 rounded-lg text-left transition-all duration-300 font-serif text-white cursor-pointer border-2 ${
+            isSelected
+              ? "bg-blue-400/30 border-blue-400"
+              : "bg-slate-700/50 border-transparent hover:bg-slate-700/80"
+          }`;
+          btn.innerHTML = `
+            <div class="text-base md:text-lg font-bold">${composer.name}</div>
+            <div class="text-sm text-gray-400 mt-1">${composer.lived}</div>
+          `;
+          btn.onclick = () => selectComposer(composer);
+          grid.appendChild(btn);
+        });
+      }
+
+      function toggleEra(era) {
+        currentEra = currentEra === era ? null : era;
+        selectedComposer = null;
+        renderTimeline();
+        renderDetail();
+      }
+
+      function selectComposer(composer) {
+        selectedComposer = composer;
+        renderTimeline();
+        renderDetail();
+      }
+
+      function getSpotifyEmbedUrl(url) {
+        // Convert open.spotify.com/track/ID to embed URL
+        const match = url.match(/track\/([a-zA-Z0-9]+)/);
+        return match
+          ? `https://open.spotify.com/embed/track/${match[1]}?utm_source=generator&theme=0`
+          : null;
+      }
+
+      function renderDetail() {
+        const placeholder = document.getElementById("placeholder");
+        const detail = document.getElementById("composerDetail");
+
+        if (!selectedComposer) {
+          placeholder.classList.remove("hidden");
+          detail.classList.add("hidden");
+          return;
+        }
+
+        placeholder.classList.add("hidden");
+        detail.classList.remove("hidden");
+        detail.className =
+          "sticky top-2 z-10 bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl p-3 md:p-5 border-2 border-yellow-400";
+
+        const embedUrl = getSpotifyEmbedUrl(selectedComposer.spotify);
+        const spotifyEmbed = embedUrl
+          ? `<iframe
+              class="rounded-lg w-full"
+              src="${embedUrl}"
+              height="80"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>`
+          : "";
+
+        detail.innerHTML = `
+          <div class="flex items-baseline gap-2 mb-2">
+            <h2 class="text-lg md:text-2xl font-bold">${selectedComposer.name}</h2>
+            <span class="text-xs md:text-sm text-gray-400">${selectedComposer.lived}</span>
+          </div>
+
+          <p class="text-xs md:text-sm text-gray-300 mb-2">${selectedComposer.characteristics}</p>
+
+          ${spotifyEmbed}
+
+          <div class="mt-2 md:mt-3 p-2 md:p-3 bg-blue-400/10 rounded border-l-4 border-blue-400">
+            <p class="text-xs md:text-sm text-gray-300"><span class="text-blue-400 font-bold">Impact:</span> ${selectedComposer.significance}</p>
+          </div>
+        `;
+      }
+
+      init();
+    </script>
+  </body>
+</html>

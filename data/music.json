@@ -1,0 +1,274 @@
+[
+  {
+    "era": "Medieval",
+    "years": "500-1400",
+    "transition": "Monophony → Polyphony",
+    "composers": [
+      {
+        "name": "Hildegard von Bingen",
+        "lived": "1098-1179",
+        "characteristics": "Monophonic (single melody), modal scales, sacred chant",
+        "piece": { "title": "O Euchari", "description": "Soaring mystical melody" },
+        "spotify": "https://open.spotify.com/track/21aOLjTFH10qpcgy6vvvXP",
+        "significance": "Defined sacred monophony"
+      },
+      {
+        "name": "Léonin",
+        "lived": "c.1150-1201",
+        "characteristics": "Organum, first notated polyphony, Notre Dame school",
+        "piece": { "title": "Viderunt Omnes", "description": "First notated polyphony" },
+        "spotify": "https://open.spotify.com/track/2nfpKzWyo5QtslbI0hbeP2",
+        "significance": "Invented organum — first polyphony"
+      },
+      {
+        "name": "Guillaume de Machaut",
+        "lived": "c.1300-1377",
+        "characteristics": "Ars Nova, early polyphony, secular songs",
+        "piece": { "title": "Messe de Nostre Dame", "description": "First complete polyphonic mass" },
+        "spotify": "https://open.spotify.com/track/5NOQ0S9kFSQI971qdZHp0L",
+        "significance": "First complete polyphonic mass; bridged sacred and secular"
+      }
+    ]
+  },
+  {
+    "era": "Renaissance",
+    "years": "1400-1600",
+    "transition": "Modal → Tonal harmony",
+    "composers": [
+      {
+        "name": "Josquin des Prez",
+        "lived": "c.1450-1521",
+        "characteristics": "Polyphony, imitative counterpoint, text expression",
+        "piece": { "title": "Ave Maria... virgo serena", "description": "Four-part polyphony" },
+        "spotify": "https://open.spotify.com/track/5vFer9UrC4AoSBTT8OV6DH",
+        "significance": "Music begins expressing specific emotions and text meaning"
+      },
+      {
+        "name": "Giovanni Pierluigi da Palestrina",
+        "lived": "c.1525-1594",
+        "characteristics": "Smooth polyphony, perfect voice leading, Counter-Reformation ideal",
+        "piece": { "title": "Missa Papae Marcelli (Kyrie)", "description": "Clarity in sacred polyphony" },
+        "spotify": "https://open.spotify.com/track/2eUaIkWdxM6ndowlwU6LGk",
+        "significance": "Perfected sacred polyphony; model for centuries of church music"
+      },
+      {
+        "name": "Claudio Monteverdi",
+        "lived": "1567-1643",
+        "characteristics": "Seconda pratica, text-driven harmony, dramatic expression",
+        "piece": { "title": "Lamento della Ninfa", "description": "Ground-bass lament, raw emotion" },
+        "spotify": "https://open.spotify.com/track/6M1pzGOOqnRye8SKe3pn9V",
+        "significance": "Invented opera; bridged Renaissance to Baroque"
+      }
+    ]
+  },
+  {
+    "era": "Baroque",
+    "years": "1600-1750",
+    "transition": "Complex counterpoint → Clear melody + accompaniment",
+    "composers": [
+      {
+        "name": "Johann Sebastian Bach",
+        "lived": "1685-1750",
+        "characteristics": "Functional harmony, counterpoint mastery, figured bass, ornamentation",
+        "piece": { "title": "Brandenburg Concerto No. 3", "description": "Concerto grosso form" },
+        "spotify": "https://open.spotify.com/track/6YfMGOGWmKJqxGukqlvCss",
+        "significance": "Mastered counterpoint and tonal system; polyphonic zenith"
+      },
+      {
+        "name": "George Frideric Handel",
+        "lived": "1685-1759",
+        "characteristics": "Italian opera, English oratorio, grand ceremonial style",
+        "piece": { "title": "Messiah (Hallelujah Chorus)", "description": "Monumental choral writing" },
+        "spotify": "https://open.spotify.com/track/5ciA9mtXfZosuymX903qlo",
+        "significance": "Popularized oratorio; made classical music public entertainment"
+      },
+      {
+        "name": "Antonio Vivaldi",
+        "lived": "1678-1741",
+        "characteristics": "Ritornello form, virtuosic solo writing, programmatic music",
+        "piece": { "title": "Four Seasons (Spring)", "description": "Programmatic concerto" },
+        "spotify": "https://open.spotify.com/track/6cMvfWeDBdeE2UI3J6R019",
+        "significance": "Pioneered the concerto form; influenced Bach and all who followed"
+      }
+    ]
+  },
+  {
+    "era": "Classical",
+    "years": "1750-1820",
+    "transition": "Universal forms → Personal expression",
+    "composers": [
+      {
+        "name": "Joseph Haydn",
+        "lived": "1732-1809",
+        "characteristics": "Symphony/string quartet father, sonata form, wit and surprise",
+        "piece": { "title": "Symphony No. 94 'Surprise'", "description": "Humor in classical form" },
+        "spotify": "https://open.spotify.com/track/5WhCYKEFcSs5K22HtepVLG",
+        "significance": "Invented the symphony and string quartet as premier forms"
+      },
+      {
+        "name": "Wolfgang Amadeus Mozart",
+        "lived": "1756-1791",
+        "characteristics": "Clarity, balance, elegant forms, transparent textures",
+        "piece": { "title": "Symphony No. 40 (G minor)", "description": "Passion within restraint" },
+        "spotify": "https://open.spotify.com/track/7kLSUaQSKH9rt9tJKKRwZV",
+        "significance": "Perfected symphony, concerto, opera; melody-harmony balance"
+      },
+      {
+        "name": "Carl Philipp Emanuel Bach",
+        "lived": "1714-1788",
+        "characteristics": "Empfindsamer Stil, emotional contrast, free fantasy",
+        "piece": { "title": "Solfeggietto", "description": "Dramatic keyboard virtuosity" },
+        "spotify": "https://open.spotify.com/track/4ats4db9aL9O0Dh1i1q3ie",
+        "significance": "Broke from Baroque rigidity; emotional style that shaped Haydn and Mozart"
+      }
+    ]
+  },
+  {
+    "era": "Romantic",
+    "years": "1820-1900",
+    "transition": "Tonality stretched → Multiple paths",
+    "composers": [
+      {
+        "name": "Ludwig van Beethoven",
+        "lived": "1770-1827",
+        "characteristics": "Motivic development, expanded forms, personal expression, drama",
+        "piece": { "title": "Symphony No. 5", "description": "Tiny motif builds entire movement" },
+        "spotify": "https://open.spotify.com/track/7420m4mGEFg0H1gZK4hhef",
+        "significance": "Transformed music into profound personal and universal expression"
+      },
+      {
+        "name": "Richard Wagner",
+        "lived": "1813-1883",
+        "characteristics": "Leitmotif, Gesamtkunstwerk, chromatic harmony, endless melody",
+        "piece": { "title": "Tristan und Isolde (Prelude)", "description": "Dissolved tonal boundaries" },
+        "spotify": "https://open.spotify.com/track/4zS5hoSJbxpsF1p1k7wihM",
+        "significance": "Dissolved tonality; Tristan chord changed harmony forever"
+      },
+      {
+        "name": "Frédéric Chopin",
+        "lived": "1810-1849",
+        "characteristics": "Individual emotion, nationalism, piano revolution, ornamentation",
+        "piece": { "title": "Nocturne Op. 9 No. 2", "description": "Dreamy ornamented melodies" },
+        "spotify": "https://open.spotify.com/track/1VNvsvEsUpuUCbHpVop1vo",
+        "significance": "Revolutionized piano idiom; intimate emotional expression"
+      },
+      {
+        "name": "Franz Liszt",
+        "lived": "1811-1886",
+        "characteristics": "Virtuosity, symphonic poem, thematic transformation, showmanship",
+        "piece": { "title": "Hungarian Rhapsody No. 2", "description": "Virtuosic showpiece" },
+        "spotify": "https://open.spotify.com/track/4wY1A2TPTmIIlsMCE0kFRY",
+        "significance": "Invented the solo recital and symphonic poem"
+      }
+    ]
+  },
+  {
+    "era": "Impressionism",
+    "years": "1860-1920",
+    "transition": "Abandoned German logic → Color and atmosphere",
+    "composers": [
+      {
+        "name": "Claude Debussy",
+        "lived": "1862-1918",
+        "characteristics": "Color over form, ambiguous tonality, whole-tone/pentatonic scales, atmosphere",
+        "piece": { "title": "Clair de Lune", "description": "Quintessential impressionism" },
+        "spotify": "https://open.spotify.com/track/6kf7ZCJjEbjZXikivKOsvJ",
+        "significance": "Abandoned tonal rules; created entirely new color palette"
+      },
+      {
+        "name": "Maurice Ravel",
+        "lived": "1875-1937",
+        "characteristics": "Exquisite orchestration, jazz influences, precision with sensuality",
+        "piece": { "title": "Boléro", "description": "Hypnotic crescendo through orchestration" },
+        "spotify": "https://open.spotify.com/track/3KtsRijwp8KunCRYlOdWEi",
+        "significance": "Master orchestrator; orchestration itself as composition"
+      },
+      {
+        "name": "Erik Satie",
+        "lived": "1866-1925",
+        "characteristics": "Simplicity, anti-Romantic, furniture music, proto-minimalism",
+        "piece": { "title": "Gymnopédie No. 1", "description": "Sparse, floating calm" },
+        "spotify": "https://open.spotify.com/track/5NGtFXVpXSvwunEIGeviY3",
+        "significance": "Minimalist precursor; anti-Romantic rebel who influenced Debussy and Cage"
+      }
+    ]
+  },
+  {
+    "era": "Modern",
+    "years": "1900-1950",
+    "transition": "Systematic approaches → Pluralism",
+    "composers": [
+      {
+        "name": "Igor Stravinsky",
+        "lived": "1882-1971",
+        "characteristics": "Rhythmic innovation, primitivism, bitonality, neoclassicism",
+        "piece": { "title": "The Rite of Spring", "description": "Savage rhythmic revolution" },
+        "spotify": "https://open.spotify.com/track/4odlTAKrvaQ4UUJqatxAHt",
+        "significance": "Showed rhythm could be as revolutionary as harmony"
+      },
+      {
+        "name": "Arnold Schoenberg",
+        "lived": "1874-1951",
+        "characteristics": "Atonality, twelve-tone technique, expressionism, abandons key centers",
+        "piece": { "title": "Verklärte Nacht", "description": "Late Romantic into atonality" },
+        "spotify": "https://open.spotify.com/track/4VXBtvFn7qTjzFoWmWhORM",
+        "significance": "Abandoned tonality entirely; created the twelve-tone system"
+      },
+      {
+        "name": "Béla Bartók",
+        "lived": "1881-1945",
+        "characteristics": "Folk music research, dissonance, asymmetric rhythms, night music",
+        "piece": { "title": "Music for Strings, Percussion and Celesta", "description": "Folk meets modernism" },
+        "spotify": "https://open.spotify.com/track/0Niklcl3Ajq0hqTfJ3LSoI",
+        "significance": "Fused folk authenticity with modernist language"
+      },
+      {
+        "name": "Olivier Messiaen",
+        "lived": "1908-1992",
+        "characteristics": "Modes of limited transposition, birdsong, rhythmic innovation, synesthesia",
+        "piece": { "title": "Quartet for the End of Time", "description": "Transcendent in a POW camp" },
+        "spotify": "https://open.spotify.com/track/54ZI0jJeDGf2SmWknMB6Z2",
+        "significance": "New modes, birdsong as music; taught Boulez and Stockhausen"
+      }
+    ]
+  },
+  {
+    "era": "Contemporary",
+    "years": "1960-Present",
+    "transition": "Return to accessibility and pluralism",
+    "composers": [
+      {
+        "name": "John Cage",
+        "lived": "1912-1992",
+        "characteristics": "Chance operations, prepared piano, silence as music, conceptualism",
+        "piece": { "title": "4'33\"", "description": "Silence redefined as music" },
+        "spotify": "https://open.spotify.com/track/2bNCdW4rLnCTzgqUXTTDO1",
+        "significance": "Redefined what music is; any sound (or none) can be music"
+      },
+      {
+        "name": "Philip Glass",
+        "lived": "b. 1937",
+        "characteristics": "Repetition, gradual transformation, return to tonality, accessibility",
+        "piece": { "title": "Metamorphosis One", "description": "Meditative simplicity" },
+        "spotify": "https://open.spotify.com/track/4MQjH7bUOKCZlJXtAlfzDK",
+        "significance": "Minimalism; reconnected classical music with popular audiences"
+      },
+      {
+        "name": "Steve Reich",
+        "lived": "b. 1936",
+        "characteristics": "Phasing, process music, rhythmic patterns, speech melody",
+        "piece": { "title": "Music for 18 Musicians", "description": "Pulsing interlocking patterns" },
+        "spotify": "https://open.spotify.com/track/2yUYtWmxx16bANtxC47xfp",
+        "significance": "Invented phasing and process music; rhythm as structure"
+      },
+      {
+        "name": "Kaija Saariaho",
+        "lived": "1952-2023",
+        "characteristics": "Spectral music, tone color focus, electronics, pluralism, global influences",
+        "piece": { "title": "L'amour de loin", "description": "Shimmering orchestration" },
+        "spotify": "https://open.spotify.com/track/5IevRuwyi9ohzkoreW5GaN",
+        "significance": "Spectral music; fused electronics with acoustic instruments"
+      }
+    ]
+  }
+]
